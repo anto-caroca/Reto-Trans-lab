@@ -1,0 +1,14 @@
+{
+  "name": "reto-trans-lab",
+  "version": "0.0.1",
+  "description": "Mejora de proyecto trans-lab",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "trans-lab"
+  ],
+  "author": "antonella",
+  "license": "ISC"
+}
