@@ -16,3 +16,29 @@ function closeMenu() {
   sideMenu.classList.add('menu_closed'); // añadimos la clase display-none
   sideMenu.classList.remove('menu_open');
 }
+function logoutWithFirebase(){
+  firebase.auth().signOut()
+      .then(()=>{
+          console.log("Usuario finalizó su sesión");
+      })
+      .catch((error)=>{
+          console.log("Error de firebase > Código > "+error.code); //error.code nos mostrará el código de error para informarnos qué pasó
+          console.log("Error de firebase > Mensaje > "+error.message); //error.message nos mostrará el mensaje de firebase del mismo error
+          // modal con mensaje de error
+      });
+}
+
+window.onload = ()=>{
+  firebase.auth().onAuthStateChanged((user)=>{
+      if(user){
+          //Si estamos logueados
+         
+          loggedIn.style.display = "block";
+          console.log("User > "+JSON.stringify(user));
+      }else{
+          //No estamos logueados
+         
+          loggedIn.style.display = "none";
+      }
+  });
+}

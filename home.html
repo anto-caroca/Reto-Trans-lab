@@ -8,7 +8,8 @@
 </head>
 
 <body>
-  <div class="pos-f-t">
+  <div class="container-fluid">
+    <div class="pos-f-t">
       
     <!-- Creando Navbar Side Menú, se borra div class="collapse" -->
     <nav class="navbar-sm navbar-dark bg-dark" id="barra">
@@ -37,8 +38,27 @@
         <a class="nav-link" href="#">home</a>
       </div>
     </nav>
-  
   </div>
+  </div>
+<!--Login-->
+<div id="loggedIn">
+    <p id="username"></p>
+    <input id="logout" onclick="logoutWithFirebase()" type="button" value="LOGOUT">
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAO7dpe75DRfVtfN-0CXYJdD6E5hItw2L0",
+    authDomain: "trans-lab-96591.firebaseapp.com",
+    databaseURL: "https://trans-lab-96591.firebaseio.com",
+    projectId: "trans-lab-96591",
+    storageBucket: "trans-lab-96591.appspot.com",
+    messagingSenderId: "456985569107"
+  };
+  firebase.initializeApp(config);
+</script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>

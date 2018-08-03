@@ -25,7 +25,7 @@
 .menu_content{
     padding: 20px;
     margin-top: 40px;
-    font-size: 25px;
+    font-size: 35px;
 }
 #barra{
     height: 100px;
@@ -38,11 +38,11 @@
 
 @media(min-width: 768px){ /* esta medida se encuentra en bootstrap-> overview-> responsive breakpoints */
     .menu{
-        width: 20vw; /*El menú va a tomar este ancho con pantallas de 768px hacia arriba*/
+        width: 40vw; /*El menú va a tomar este ancho con pantallas de 768px hacia arriba*/
     }
 
     .menu_closed{
-        left:-20vw;
+        left:-40vw;
     }
 }
 @media(max-width: 768px){ /* esta medida se encuentra en bootstrap-> overview-> responsive breakpoints */

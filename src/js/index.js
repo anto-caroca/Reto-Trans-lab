@@ -14,6 +14,25 @@ function validatePassword(){
       
 }  
 
+//Login
+function loginWithFirebase(){
+  const emailValue = email.value;
+  const passwordValue = password.value;
+
+  firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue)
+      .then(()=>{
+          console.log("Usuario inició sesión con éxito");
+      })
+      .catch((error)=>{
+          console.log("Error de firebase > Código > "+error.code); //error.code nos mostrará el código de error para informarnos qué pasó
+          console.log("Error de firebase > Mensaje > "+error.message); //error.message nos mostrará el mensaje de firebase del mismo error
+          // modal con mensaje de error
+          $('#myModal').modal().innerHTML = $('#myModal').modal(error.code) // funcionará????
+          $('#myModal').modal().innerHTML = $('#myModal').modal(error.message) // ???
+      });
+}
+
+
   
 /*const renderBipBalance = document.getElementById("renderBipBalance");
 let storeBipBalance;
