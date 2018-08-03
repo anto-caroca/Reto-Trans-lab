@@ -27,12 +27,12 @@
     margin-top: 20px;
 }
 
-@media(max-width: 576px){ /* esta medida se encuentra en bootstrap-> overview-> responsive breakpoints */
+@media(min-width: 768px){ /* esta medida se encuentra en bootstrap-> overview-> responsive breakpoints */
     .menu{
-        width: 60vw; /*El menú va a tomar este ancho con pantallas de 768px hacia arriba*/
+        width: 20vw; /*El menú va a tomar este ancho con pantallas de 768px hacia arriba*/
     }
 
     .menu_closed{
-        left:-60vw;
+        left:-20vw;
     }
 }
