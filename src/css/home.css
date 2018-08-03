@@ -2,13 +2,13 @@
 .menu{
     position: absolute;
     top:0;
-    height: 150vh; /* viewport height, usa el 100% de la altura de la pantalla*/
-    width: 100vw;  /* viewport width 90% del an*/
+    height: 200vh; /* viewport height, usa el 100% de la altura de la pantalla*/
+    width: 190vw;  /* viewport width 90% del an*/
     transition: 0.5s ease-out
 }
 
 .menu_closed{
-    left: -90vw;
+    left: -100vw;
 }
 
 .menu_open{
@@ -16,17 +16,23 @@
 }
 
 .close_button{ /* configurando boton de cierre del navbar*/
-    font-size: xx-large;
+    font-size: 40px;
     color: white;
     position: absolute;
     right: 10px;                   
 }
 
 .menu_content{
-    padding: 10px;
-    margin-top: 20px;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 25px;
 }
 #barra{
+    height: 100px;
+}
+
+.navbar-toggler{
+    width: 90px;
     height: 100px;
 }
 
