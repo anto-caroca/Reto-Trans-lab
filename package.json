@@ -10,5 +10,11 @@
     "trans-lab"
   ],
   "author": "antonella",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "dev": "^0.1.3",
+    "firebase-tools": "^4.0.2",
+    "mocha": "^5.2.0"
+  }
 }
