@@ -2,8 +2,8 @@
 .menu{
     position: absolute;
     top:0;
-    height: 100vh; /* viewport height, usa el 100% de la altura de la pantalla*/
-    width: 90vw;  /* viewport width 90% del an*/
+    height: 150vh; /* viewport height, usa el 100% de la altura de la pantalla*/
+    width: 100vw;  /* viewport width 90% del an*/
     transition: 0.5s ease-out
 }
 
@@ -26,6 +26,9 @@
     padding: 10px;
     margin-top: 20px;
 }
+#barra{
+    height: 100px;
+}
 
 @media(min-width: 768px){ /* esta medida se encuentra en bootstrap-> overview-> responsive breakpoints */
     .menu{
@@ -34,5 +37,14 @@
 
     .menu_closed{
         left:-20vw;
+    }
+}
+@media(max-width: 768px){ /* esta medida se encuentra en bootstrap-> overview-> responsive breakpoints */
+    .menu{
+        width: 40vw; /*El menú va a tomar este ancho con pantallas de 768px hacia arriba*/
+    }
+
+    .menu_closed{
+        left:-40vw;
     }
 }
