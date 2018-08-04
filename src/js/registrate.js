@@ -1,3 +1,20 @@
+let password= document.getElementById('password');
+
+function validatePassword(){
+
+	let exp = /^[0-9]{6,8}$/;
+	let result = exp.test(password.value);
+      
+  if(!result){
+    $('#myModal').modal()
+    return false;
+        
+	}else{
+    return true; 
+  }
+      
+}  
+
 //Registro
 function registerWithFirebase(){
     const emailValue = email.value;
@@ -19,19 +36,3 @@ function registerWithFirebase(){
            
         });
 }
-
-/*let password= document.getElementById('password');
-
-function validatePassword(){
-
-	let exp = /^[0-9]{6,8}$/;
-	let result = exp.test(password.value);
-      
-  if(!result){
-    $('#myModal').modal()
-        
-	}else{
-    return true; 
-  }
-      
-}  */

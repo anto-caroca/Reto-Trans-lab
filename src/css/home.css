@@ -11,7 +11,7 @@ body{
 }
 
 .menu_closed{
-    left: -100vw;
+    left: -90vw;
 }
 
 .menu_open{
@@ -19,51 +19,54 @@ body{
 }
 
 .close_button{ 
-    font-size: 50px;
+    font-size: xx-large;
     color: white;
     position: absolute;
     right: 10px;                   
 }
 
 .menu_content{
-    padding: 20px;
-    margin-top: 40px;
-    font-size: 35px;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 20px;
 }
 #barra{
-    height: 100px;
+    height: 60px;
     display: flex;
     justify-content: space-between;
 }
 
 #logout{
-height: 90px;
-width: 90px;
+height: 50px;
+width: 50px;
 margin-top:5px;
 margin-right: 5px;
+font-size: 10px;
 }
 
 .navbar-toggler{
-    width: 90px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
+    margin-top:5px;
+    margin-left: 5px;
 }
 
 @media(min-width: 576px){ /* esta medida se encuentra en bootstrap-> overview-> responsive breakpoints */
     .menu{
-        width: 550px; /*El menú va a tomar este ancho con pantallas de 768px hacia arriba*/
+        width: 10vw; /*El menú va a tomar este ancho con pantallas de 768px hacia arriba*/
     }
 
     .menu_closed{
-        left:-550px;
+        left:-10vw;
     }
 }
 
 .flex-container {
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-top: 50px;
+    margin-left: 25px;
+    margin-right: 25px;
     font-weight: bold;
     color: white;
   }
@@ -71,10 +74,10 @@ margin-right: 5px;
   .flex-container > div{
     background-color: orange;
     width: 90%;
-    margin: 30px;
+    margin: 15px;
     text-align: center;
-    line-height: 75px;
-    font-size: 30px;
+    line-height: 50px;
+    font-size: 15px;
     cursor: pointer;
   }
 
