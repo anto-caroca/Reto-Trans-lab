@@ -20,25 +20,28 @@ function logoutWithFirebase(){
   firebase.auth().signOut()
       .then(()=>{
           console.log("Usuario finalizó su sesión");
+          window.location="index.html";
       })
       .catch((error)=>{
           console.log("Error de firebase > Código > "+error.code); //error.code nos mostrará el código de error para informarnos qué pasó
           console.log("Error de firebase > Mensaje > "+error.message); //error.message nos mostrará el mensaje de firebase del mismo error
           // modal con mensaje de error
+         // alert(error.code);
+         // alert(error.message);
+         
       });
 }
 
 window.onload = ()=>{
   firebase.auth().onAuthStateChanged((user)=>{
       if(user){
-          //Si estamos logueados
-         
-          loggedIn.style.display = "block";
+          //Si no estamos logueados
+          logout.style.display = "inline-block";
           console.log("User > "+JSON.stringify(user));
       }else{
-          //No estamos logueados
+          //ya estamos logueados
          
-          loggedIn.style.display = "none";
+          logout.style.display = "none";
       }
   });
 }

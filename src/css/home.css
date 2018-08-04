@@ -1,10 +1,13 @@
+body{
+    background-color: lightgray;
+}
 /*Hacemos que el menu adopte la posición más arriba posible*/
 .menu{
     position: absolute;
     top:0;
-    height: 200vh; /* viewport height, usa el 100% de la altura de la pantalla*/
-    width: 190vw;  /* viewport width 90% del an*/
-    transition: 0.5s ease-out
+    height: 100vh; /* viewport height, usa el 100% de la altura de la pantalla*/
+    width: 90vw;  /* viewport width 90% del an*/
+    transition: 0.5s ease-out;  
 }
 
 .menu_closed{
@@ -15,8 +18,8 @@
     left: 0;
 }
 
-.close_button{ /* configurando boton de cierre del navbar*/
-    font-size: 40px;
+.close_button{ 
+    font-size: 50px;
     color: white;
     position: absolute;
     right: 10px;                   
@@ -29,6 +32,15 @@
 }
 #barra{
     height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#logout{
+height: 90px;
+width: 90px;
+margin-top:5px;
+margin-right: 5px;
 }
 
 .navbar-toggler{
@@ -36,21 +48,33 @@
     height: 100px;
 }
 
-@media(min-width: 768px){ /* esta medida se encuentra en bootstrap-> overview-> responsive breakpoints */
+@media(min-width: 576px){ /* esta medida se encuentra en bootstrap-> overview-> responsive breakpoints */
     .menu{
-        width: 40vw; /*El menú va a tomar este ancho con pantallas de 768px hacia arriba*/
+        width: 550px; /*El menú va a tomar este ancho con pantallas de 768px hacia arriba*/
     }
 
     .menu_closed{
-        left:-40vw;
+        left:-550px;
     }
 }
-@media(max-width: 768px){ /* esta medida se encuentra en bootstrap-> overview-> responsive breakpoints */
-    .menu{
-        width: 40vw; /*El menú va a tomar este ancho con pantallas de 768px hacia arriba*/
-    }
 
-    .menu_closed{
-        left:-40vw;
-    }
-}
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .flex-container > div{
+    background-color: orange;
+    width: 90%;
+    margin: 30px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+

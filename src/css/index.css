@@ -16,11 +16,15 @@ h1{
     position: absolute;
 }
 
+.modal-header button{
+    display: flex;
+    justify-content: flex-end;
+}
+
 .modal-body {
     font-size: 14px;
     color: #4A4A4A;
 }
-
 
 .form-group, .box3, .box1, .modal-footer{
         display: flex;
@@ -51,3 +55,4 @@ a{
     color: orange;
     text-decoration: none;
 }
+

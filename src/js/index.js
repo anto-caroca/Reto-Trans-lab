@@ -1,18 +1,13 @@
-let password= document.getElementById('password');
-
+/*let password= document.getElementById('password');
 function validatePassword(){
-
-	let exp = /^[0-9]{4,8}$/;
-	let result = exp.test(password.value);
-      
+	let exp = /^[0-9]{6,8}$/;
+	let result = exp.test(password.value);   
   if(!result){
-    $('#myModal').modal()
-        
+    $('#myModal').modal()     
 	}else{
     return window.location="home.html"; 
-  }
-      
-}  
+  }    
+}  */
 
 //Login
 function loginWithFirebase(){
@@ -22,18 +17,21 @@ function loginWithFirebase(){
   firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue)
       .then(()=>{
           console.log("Usuario inició sesión con éxito");
+          window.location="home.html";
       })
       .catch((error)=>{
           console.log("Error de firebase > Código > "+error.code); //error.code nos mostrará el código de error para informarnos qué pasó
           console.log("Error de firebase > Mensaje > "+error.message); //error.message nos mostrará el mensaje de firebase del mismo error
-          // modal con mensaje de error
-          $('#myModal').modal().innerHTML = $('#myModal').modal(error.code) // funcionará????
-          $('#myModal').modal().innerHTML = $('#myModal').modal(error.message) // ???
+         //alert('contraseña inválida');
+         $('#myModal').modal();
+          let msn = document.getElementById("modalP");
+         if (error.code) {
+          msn.innerHTML = error.message;
+       }
+
       });
 }
 
-
-  
 /*const renderBipBalance = document.getElementById("renderBipBalance");
 let storeBipBalance;
 const boton= document.getElementById("btn-consultar-saldo");

@@ -6,21 +6,25 @@ function registerWithFirebase(){
     firebase.auth().createUserWithEmailAndPassword(emailValue, passwordValue)
         .then(()=>{
             console.log("Usuario creado con éxito");
+            window.location="home.html";
         })
         .catch((error)=>{
+            $('#myModal').modal();
+          let msn = document.getElementById("modalP");
+         if (error.code) {
+          msn.innerHTML = error.message;
+       }
             console.log("Error de firebase > Código > "+error.code); //error.code nos mostrará el código de error para informarnos qué pasó
             console.log("Error de firebase > Mensaje > "+error.message); //error.message nos mostrará el mensaje de firebase del mismo error
-            // aca va el modal aviso de error
-            $('#myModal').modal().innerHTML = $('#myModal').modal(error.code) // funcionará????
-          $('#myModal').modal().innerHTML = $('#myModal').modal(error.message) // ???
+           
         });
 }
 
-let password= document.getElementById('password');
+/*let password= document.getElementById('password');
 
 function validatePassword(){
 
-	let exp = /^[0-9]{4,8}$/;
+	let exp = /^[0-9]{6,8}$/;
 	let result = exp.test(password.value);
       
   if(!result){
@@ -30,4 +34,4 @@ function validatePassword(){
     return true; 
   }
       
-}  
+}  */
