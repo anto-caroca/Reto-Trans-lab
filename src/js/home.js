@@ -37,7 +37,8 @@ window.onload = ()=>{
       if(user){
           //Si no estamos logueados
           logout.style.display = "inline-block";
-          console.log("User > "+JSON.stringify(user));
+          // console.log("User > "+JSON.stringify(user));
+          console.log(user.email);
       }else{
           //ya estamos logueados
          

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
     <link rel="stylesheet" href="src/css/home.css">
+    <link rel="stylesheet" href="src/css/perfil.css">
 </head>
 <body>
     
@@ -34,6 +35,7 @@
       
     <!-- Creando Navbar Side Menú, se borra div class="collapse" -->
         <nav class="navbar-sm navbar-dark bg-dark" id="barra">
+            <h6>TRANS-LAB</h6>
         <!--Borrar data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"-->
             <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -61,7 +63,28 @@
          </div>
         </nav>
     </div>
-<h3>Perfil</h3>
+
+<div class='container-1'>
+    <div class="box1">
+        <div><img src="docs/female.jpg" alt="default profile picture"  width="100" height="100"></div>
+     <!--foto perfil-->
+    </div>
+    <div class="box2">
+        <div id="emailP"></div>
+    </div>
+    <div class="box3">
+        <div class="input-field"></div>
+            <input id="numeroTarjeta" class="border border-light" type="number" placeholder="Número Tarjeta Bip!:">
+        </div>
+        <div class="input-field"></div>
+            <button id="btn-agregar" class="btn btn-warning">Agregar Tarjeta</button>
+        </div>
+    </div>
+    <div class="box4">
+        <div id="otrasTarjetas"></div>
+    </div>
+</div>
+
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
 <script>
   // Initialize Firebase

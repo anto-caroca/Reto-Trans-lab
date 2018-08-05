@@ -17,10 +17,12 @@
       
     <!-- Creando Navbar Side Menú, se borra div class="collapse" -->
     <nav class="navbar-sm navbar-dark bg-dark" id="barra">
+        <h6>TRANS-LAB</h6>
       <!--Borrar data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"-->
       <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
+       
       </button>
         <button class="btn btn-primary navbar-btn" id="logout" onclick="logoutWithFirebase()" >Cerrar <br /> Sesión</button>
     </nav>
@@ -48,10 +50,10 @@
   <h3>Home</h3>
 
   <div class="flex-container">
-      <div><a href="saldo.html">Ver Saldo</a></div>
-      <div><a href="tarifa.html">Calcular Tarifa</a></div>
-      <div><a href="perfil.html">Perfil</a></div>  
-      <div><a href="faq.html">Preguntas Frecuentes</a></div>
+      <div><a class="btn btn-warning" href="saldo.html" role="button">Ver Saldo</a></div>
+      <div><a class="btn btn-warning" href="tarifa.html" role="button">Calcular Tarifa</a></div>
+      <div><a class="btn btn-warning" href="perfil.html" role="button">Perfil</a></div>  
+      <div><a class="btn btn-warning" href="faq.html" role="button">Preguntas Frecuentes</a></div>
     </div>
     
 

@@ -1,0 +1,79 @@
+.container-1{
+    display:flex;
+    flex-direction: column;
+}
+
+.box2 {
+    text-align: center; 
+}
+
+.box2 > div{
+    background-color: white;
+    width: 90%;
+    align-content: center;
+}
+
+.box2 div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-weight: bold;
+}
+
+.box1 > div{
+    background-color: orange;
+    width: 90%;
+    align-content: center;
+}
+
+.box1 div{
+    margin-left: 0px;
+    height: 150px;
+    width: 100%;
+    text-align: center;
+}
+
+img {
+    border-radius: 50%;
+    margin-top: 25px;
+}
+
+.box3 {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+.box3 > div{
+    align-content: center;
+}
+
+#numeroTarjeta{
+    width: 90%;
+    text-align: center;
+}
+
+#btn-agregar{ 
+    width: 90%;
+    height: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+    align-self: center;
+}
+
+.box4 > div{
+    background-color: white;
+    width: 90%;
+}
+
+.box4 div{
+    border: 1px #ccc solid;
+}
+.box4 {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    text-align: center;  
+    justify-content: space-between;
+}

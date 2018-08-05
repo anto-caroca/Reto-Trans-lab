@@ -34,3 +34,19 @@ function logoutWithFirebase(){
            }
         });
   }
+
+  window.onload = ()=>{
+    firebase.auth().onAuthStateChanged((user)=>{
+        if(user){
+            //Si estamos logueados
+            logout.style.display = "inline-block";
+            // console.log("User > "+JSON.stringify(user));
+            console.log(user.email);
+            document.getElementById("emailP").innerHTML = user.email;
+            
+        }else{
+            // no estamos logueados
+            logout.style.display = "none";
+        }
+    });
+  }
