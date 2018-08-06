@@ -66,9 +66,9 @@
 <div class='container-1'>
     <div class="box1">
             <input id="numBip" class="form-control" type="number" placeholder="Ingresa n° tarjeta Bip!:">
-            <p>o</p>
-            <select id="selectBip" class="form-control" value="Selecciona n° Bip!:"></select>
-            <button class="btn btn-warning" id="boton" onclick="guardarTarjeta()">Ver Saldo</button>
+            <label for="selectBip">Selecciona tu Bip!</label>
+            <select id="selectBip" class="form-control"></select>
+            <button id="boton" class="btn btn-warning" onclick="guardarTarjeta()">Ver Saldo</button>
     </div>
     <div class="box2">
         <p id="renderBipBalance"></p>

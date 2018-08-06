@@ -69,7 +69,7 @@ function guardarTarjeta(){
     bip: numeroTarjeta
   })
   .then(function(docRef) {
-    console.log("Document written with ID: ", docRef.id);
+   // console.log("Document written with ID: ", docRef.id);
     document.getElementById("numeroTarjeta").value="";
   })
   .catch(function(error) {
@@ -83,7 +83,7 @@ function guardarTarjeta(){
 }
 
 //leer info tarjetas
-let storage = document.getElementById("otrasTarjetas");
+let storage = document.getElementById("otrasTarjetas"); //DIV box4 div p es el parrafo
 db.collection("users").onSnapshot((querySnapshot) => { //se reemplaza get x onSnapshot para obtener actualizaciones en tiempo real. Tambien se saca .then
   storage.innerHTML="";
   querySnapshot.forEach((doc) => {

@@ -63,6 +63,25 @@
         </nav>
     </div>
         <h3>Tarifas</h3>
+
+        <div class='container-1'>
+            <div class="box1">
+                    <input id="numBip" class="form-control" type="number" placeholder="Ingresa n° tarjeta Bip!:">
+                    <label for="selectBip">Selecciona tu Bip!</label>
+                    <select id="selectBip" class="form-control"></select>
+                    <label for="selectTime">Selecciona horario de viaje</label>
+                    <select id="selectTime" class="form-control">
+                        <option value="630">Bajo</option>
+                        <option value="680">Medio</option>
+                        <option value="760">Alto</option>
+                    </select>
+                    <button id="boton" class="btn btn-warning" onclick="guardarTarjeta()">Calcular Tarifa</button>
+            </div>
+            <div class="box2">
+                <p id="renderBipBalance"></p>
+            </div>
+        </div>
+
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
 <script>
   // Initialize Firebase
