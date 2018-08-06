@@ -89,7 +89,7 @@ db.collection("users").onSnapshot((querySnapshot) => { //se reemplaza get x onSn
   querySnapshot.forEach((doc) => {
       console.log(`${doc.id} => ${doc.data().bip}`);
       storage.innerHTML += `
-          <p>${doc.data().bip} <button clas="btn btn-danger" onclick="eliminar('${doc.id}')">Eliminar</button></p>
+          <p>${doc.data().bip} <button class="btn btn-danger" onclick="eliminar('${doc.id}')">Eliminar</button></p>
       `
   });
 });

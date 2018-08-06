@@ -62,6 +62,18 @@
         </nav>
     </div>
 <h3>Saldo</h3>
+
+<div class='container-1'>
+    <div class="box1">
+            <input id="numBip" class="form-control" type="number" placeholder="Ingresa n° tarjeta Bip!:">
+            <p>o</p>
+            <select id="selectBip" class="form-control" value="Selecciona n° Bip!:"></select>
+            <button class="btn btn-warning" id="boton" onclick="guardarTarjeta()">Ver Saldo</button>
+    </div>
+    <div class="box2">
+        <p id="renderBipBalance"></p>
+    </div>
+</div>
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
 <script>
   // Initialize Firebase
