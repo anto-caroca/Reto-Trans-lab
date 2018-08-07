@@ -35,29 +35,13 @@ function logoutWithFirebase(){
         });
   }
 
-// funcion de asincrona fetch para  consultar a la api
-const renderBipBalance = document.getElementById("renderBipBalance"); //parrafo
+const renderBipBalance = document.getElementById("renderBipBalance"); 
 let storeBipBalance;
 const boton= document.getElementById("boton");
+let ticket = document.getElementById("selectTime").value;
 
-boton.addEventListener("click", event=>{
-let numBip = document.getElementById('numBip').value;
-
-async function fetchBip1(){
-  const bip = await fetch(`http://www.psep.cl/api/Bip.php?&numberBip=${numBip}`)
-  const dataBip = await bip.json();
-  console.log(dataBip);
-  let arrBip = Object.entries(dataBip)
-  console.log(arrBip[2][1])
-  storeBipBalance = arrBip[2][1];
-  renderBipBalance.innerHTML = "su saldo es: "+storeBipBalance;
-
-  }
-fetchBip1();
-
- })
- // fetch con select
- //let selectBip = document.getElementById('selectBip');
+ // funcion de asincrona fetch para  consultar a la api
+ 
  let storeBipBalance2;
  boton.addEventListener("click", event=>{
   let selectBip = document.getElementById('selectBip').value;
@@ -69,16 +53,19 @@ fetchBip1();
     let arrBip = Object.entries(dataBip)
     console.log(arrBip[2][1])
     storeBipBalance2 = arrBip[2][1];
+
+    //se le saca el signo $ al saldo de la bip
+    let bipBalanceWithOut$ = Array.from(storeBipBalance2).slice(1).reduce( (accumulator, currentValue) => accumulator + currentValue);
+    console.log((Array.from(storeBipBalance2)).indexOf('.'));// indice del punto del saldo de la bip. podría servir para algo...
+    console.log(bipBalanceWithOut$ - ticket); // muestra el calculo de tarifa en la consola
+    document.getElementById("finalBalance").innerHTML = "saldo final: $" + (bipBalanceWithOut$ - ticket);
     renderBipBalance.innerHTML = "su saldo es: "+storeBipBalance2;
     
-
-  
     }
   fetchBip2();
   
    })
-
- //
+// si fala este código aparece un mensaje en la consola que la app se puede romper
  const firestore = firebase.firestore();
  const settings = {/* your settings... */ 
    timestampsInSnapshots: true};
@@ -90,28 +77,8 @@ fetchBip1();
  // Initialize Cloud Firestore through Firebase
 var db = firebase.firestore();
 
-function guardarTarjeta(){
-
- let numBip = document.getElementById("numBip").value;
-
- 
-
- db.collection("users").add({
-   bip: numBip
- })
- .then(function(docRef) {
-   //console.log("Document written with ID: ", docRef.id);
-   document.getElementById("numBip").value="";
- })
- .catch(function(error) {
-   console.error("Error adding document: ", error);
-   
- });
-
-}
-
 //leer info tarjetas
- selectBip = document.getElementById("selectBip"); // selectBip es el select
+ selectBip = document.getElementById("selectBip"); 
 db.collection("users").onSnapshot((querySnapshot) => { //se reemplaza get x onSnapshot para obtener actualizaciones en tiempo real. Tambien se saca .then
  selectBip.innerHTML="";
  querySnapshot.forEach((doc) => {
@@ -121,6 +88,10 @@ db.collection("users").onSnapshot((querySnapshot) => { //se reemplaza get x onSn
          <option>${doc.data().bip}</option>     
      </select>
      `
-     
  });
 });
+
+function ticketSelection(){
+  ticket = document.getElementById("selectTime").value;
+  document.getElementById("ticketPrice").innerHTML = "costo pasaje: $" + ticket;
+}

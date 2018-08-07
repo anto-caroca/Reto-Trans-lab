@@ -66,19 +66,26 @@
 
         <div class='container-1'>
             <div class="box1">
-                    <input id="numBip" class="form-control" type="number" placeholder="Ingresa n° tarjeta Bip!:">
+                   <!-- <input id="numBip" class="form-control" type="number" placeholder="Ingresa n° tarjeta Bip!:"> -->
                     <label for="selectBip">Selecciona tu Bip!</label>
                     <select id="selectBip" class="form-control"></select>
                     <label for="selectTime">Selecciona horario de viaje</label>
-                    <select id="selectTime" class="form-control">
+                    <select id="selectTime" class="form-control" onchange="ticketSelection()">
+                        <option value="" selected>selecciona horario</option>
                         <option value="630">Bajo</option>
                         <option value="680">Medio</option>
                         <option value="760">Alto</option>
                     </select>
-                    <button id="boton" class="btn btn-warning" onclick="guardarTarjeta()">Calcular Tarifa</button>
+                    <button id="boton" class="btn btn-warning">Calcular Tarifa</button>
             </div>
             <div class="box2">
                 <p id="renderBipBalance"></p>
+            </div>
+            <div class="box3">
+                <p id="ticketPrice"></p>
+            </div>
+            <div class="box4">
+                <p id="finalBalance"></p>
             </div>
         </div>
 
