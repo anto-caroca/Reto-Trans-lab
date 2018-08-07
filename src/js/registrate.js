@@ -1,7 +1,7 @@
 let password= document.getElementById('password');
 
 function validatePassword(){
-
+/*
 	let exp = /^[0-9]{6,8}$/;
 	let result = exp.test(password.value);
       
@@ -12,8 +12,20 @@ function validatePassword(){
 	}else{
     return true; 
   }
-      
-}  
+
+ let passwordNumbers = /[0-9]/g;
+ if(password.value.match(passwordNumbers)) {  
+    $('#myModal').modal()
+    return false;
+ } else  {
+    return true; 
+ }
+ if(password.value.length >5 && password.value.length < 9) {
+  return true;
+ } else {
+return false;
+}  */
+
 
 //Registro
 function registerWithFirebase(){
