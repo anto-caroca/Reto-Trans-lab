@@ -1,5 +1,5 @@
-let password= document.getElementById('password').value;
-module.exports = validatePassword;
+let password= document.getElementById('password');
+// module.exports = validatePassword;
 function validatePassword(){
     
 /*	let exp = /^[0-9]{6,8}$/;
@@ -11,21 +11,22 @@ function validatePassword(){
     return true; 
   }*/
 
- let passwordNumbers = /[0-9]/g;
+ /*let passwordNumbers = /[0-9]/g;
     if(password.value.match(passwordNumbers)) {  
         return true;
     } else {
         $('#myModal').modal()
     return false; 
+    }
 
-let password= document.getElementById('password').value;
     if(password.value.length >5 && password.value.length < 9) {
         return true;
     } else {
+        $('#myModal').modal()
     return false;
-    }  
+    }  */
 }
-}
+
 //Registro
 function registerWithFirebase(){
     const emailValue = email.value;
