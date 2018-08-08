@@ -1,6 +1,7 @@
-window.validatePassword = function(password){
-   
-    if(password.value.length > 5 && password.value.length < 9){
+// window.
+validatePassword = function(password){
+    
+    if(password.length > 5 && password.length < 9){
         return true;
     }
 

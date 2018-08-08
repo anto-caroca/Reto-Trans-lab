@@ -1,14 +1,12 @@
-const assert = require("chai").assert; 
 global.window = global;
-const validatePassword = require('../src/js/validateEmail').validatePassword;
-require('../src/js/validateEmail');
+const assert = require("chai").assert; 
+const validatePassword = require('../src/js/validatePassword');
+require('../src/js/validatePassword');
 
 describe('validar contraseña', ()=>{
     it('debería devolver la cantidad de carácteres de la contraseña', ()=>{
-        assert.equal(validatePassword(password.length >5 && password.length < 9), true);
-        assert.equal(validatePassword(password.length <= 5 ), false);
-        assert.equal(validatePassword(password.length >= 9), false);
-        assert.equal(validatePassword(password.length === 0), false);
+        assert.equal(validatePassword('12345678'), true);
+        assert.equal(validatePassword('123456789'), false);
     });
     
 });

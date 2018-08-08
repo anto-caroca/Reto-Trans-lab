@@ -1,5 +1,10 @@
-window.validateEmail = function(email){
+// window.
+validateEmail = function(email){
     if(email.indexOf('@') < 0){
+        return false;
+    }
+
+    if(email.indexOf('@') === 0){
         return false;
     }
 
