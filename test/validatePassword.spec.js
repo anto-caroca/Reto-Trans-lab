@@ -1,7 +1,6 @@
 global.window = global;
 const assert = require("chai").assert; 
-const validatePassword = require('../src/js/validatePassword');
-require('../src/js/validatePassword');
+ require('../src/js/validatePassword.js');
 
 describe('validar contraseña', ()=>{
     it('debería devolver la cantidad de carácteres de la contraseña', ()=>{

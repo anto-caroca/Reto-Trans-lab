@@ -1,37 +1,24 @@
 let password= document.getElementById('password');
 // module.exports = validatePassword;
-function validatePassword(){
+window.validatePassword = function validatePassword(){
     
-/*	let exp = /^[0-9]{6,8}$/;
+	let exp = /^[0-9]{6,8}$/;
 	let result = exp.test(password.value);  
   if(!result){
     $('#myModal').modal()
     return false;   
 	}else{
     return true; 
-  }*/
+  }
 
- /*let passwordNumbers = /[0-9]/g;
-    if(password.value.match(passwordNumbers)) {  
-        return true;
-    } else {
-        $('#myModal').modal()
-    return false; 
-    }
 
-    if(password.value.length >5 && password.value.length < 9) {
-        return true;
-    } else {
-        $('#myModal').modal()
-    return false;
-    }  */
 }
 
 //Registro
 function registerWithFirebase(){
     const emailValue = email.value;
     const passwordValue = password.value;
-
+    validatePassword()
     firebase.auth().createUserWithEmailAndPassword(emailValue, passwordValue)
         .then(()=>{
             console.log("Usuario creado con éxito");
@@ -48,5 +35,6 @@ function registerWithFirebase(){
            
         });
 }
+
 
 

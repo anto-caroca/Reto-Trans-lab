@@ -1,13 +1,3 @@
-/*let password= document.getElementById('password');
-function validatePassword(){
-	let exp = /^[0-9]{6,8}$/;
-	let result = exp.test(password.value);   
-  if(!result){
-    $('#myModal').modal()     
-	}else{
-    return window.location="home.html"; 
-  }    
-}  */
 
 //Login
 function loginWithFirebase(){
@@ -18,6 +8,7 @@ function loginWithFirebase(){
       .then(()=>{
           console.log("Usuario inició sesión con éxito");
           window.location="home.html";
+          
       })
       .catch((error)=>{
           console.log("Error de firebase > Código > "+error.code); //error.code nos mostrará el código de error para informarnos qué pasó
@@ -30,5 +21,8 @@ function loginWithFirebase(){
        }
 
       });
+      
 }
+
+
 

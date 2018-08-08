@@ -1,6 +1,8 @@
 const assert = require('chai').assert;
 global.window = global;
-require('../src/js/validateEmail'); //Sólo enlaza el archivo, parecido al script de html
+require('../src/js/validateEmail').loginWithFirebase;
+require('../src/js/validateEmail').registerWithFirebase;
+; //Sólo enlaza el archivo, parecido al script de html
 
 describe('Validar emails', ()=>{ //Describe lo que habrá dentro de cada función
     describe('Debería verificar si existe el arroba', ()=>{
