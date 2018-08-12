@@ -1,4 +1,3 @@
-
 // funcion de asincrona fetch para  consultar a la api
 const renderBipBalance = document.getElementById("renderBipBalance"); //parrafo
 let storeBipBalance;
@@ -8,7 +7,7 @@ boton.addEventListener("click", event=>{
 let numBip = document.getElementById('numBip').value;
 
 async function fetchBip1(){
-  const bip = await fetch(`http://www.psep.cl/api/Bip.php?&numberBip=${numBip}`)
+  const bip = await fetch(`http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${numBip}`)
   const dataBip = await bip.json();
   console.log(dataBip);
   let arrBip = Object.entries(dataBip)
@@ -27,7 +26,7 @@ fetchBip1();
   let selectBip = document.getElementById('selectBip').value;
   
   async function fetchBip2(){
-    const bip = await fetch(`http://www.psep.cl/api/Bip.php?&numberBip=${selectBip}`)
+    const bip = await fetch(`http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${selectBip}`)
     const dataBip = await bip.json()
     console.log(dataBip);
     let arrBip = Object.entries(dataBip)

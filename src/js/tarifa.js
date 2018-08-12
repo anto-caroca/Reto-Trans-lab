@@ -12,7 +12,7 @@ let ticket = document.getElementById("selectTime").value;
   let selectBip = document.getElementById('selectBip').value;
   
   async function fetchBip2(){
-    const bip = await fetch(`http://www.psep.cl/api/Bip.php?&numberBip=${selectBip}`)
+    const bip = await fetch(`http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${selectBip}`)
     const dataBip = await bip.json()
     console.log(dataBip);
     let arrBip = Object.entries(dataBip)
@@ -20,13 +20,26 @@ let ticket = document.getElementById("selectTime").value;
     storeBipBalance2 = arrBip[2][1];
 
     //se le saca el signo $ al saldo de la bip
-    let bipBalanceWithOut$ = Array.from(storeBipBalance2).slice(1).reduce( (accumulator, currentValue) => accumulator + currentValue);
-    console.log((Array.from(storeBipBalance2)).indexOf('.'));// indice del punto del saldo de la bip. podría servir para algo...
-    console.log(bipBalanceWithOut$ - ticket); // muestra el calculo de tarifa en la consola
-    document.getElementById("finalBalance").innerHTML = "saldo final: $" + (bipBalanceWithOut$ - ticket);
-    renderBipBalance.innerHTML = "su saldo es: "+storeBipBalance2;
-    
+    let bipBalanceWithOut$ = Array.from(storeBipBalance2).slice(1) // ["5", ".", "4", "9", "0"]
+
+    // indice del punto del saldo de la bip
+    let index = bipBalanceWithOut$.indexOf('.');
+    if (index > -1) {
+     bipBalanceWithOut$.splice(index, 1);
     }
+  //  console.log("sin punto: "+ bipBalanceWithOut$); // sin punto: 5,4,9,0
+  //  console.log(bipBalanceWithOut$); // ["5", "4", "9", "0"]
+    console.log(bipBalanceWithOut$.reduce( (accumulator, currentValue) => accumulator + currentValue)); // 5490
+    let bipSinPunto = bipBalanceWithOut$.reduce( (accumulator, currentValue) => accumulator + currentValue);
+
+    console.log(bipSinPunto - ticket); // muestra el calculo de tarifa en la consola
+    let saldoFinal = bipSinPunto - ticket;
+
+
+    document.getElementById("finalBalance").innerHTML = "saldo final: $" + (saldoFinal);
+    renderBipBalance.innerHTML = "su saldo es: "+storeBipBalance2;
+    }           
+    
   fetchBip2();
   
    })

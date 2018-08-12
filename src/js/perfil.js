@@ -1,11 +1,9 @@
-
-
-  window.onload = ()=>{
+window.onload = ()=>{
     firebase.auth().onAuthStateChanged((user)=>{
         if(user){
             //Si estamos logueados
             logout.style.display = "inline-block";
-            // console.log("User > "+JSON.stringify(user));
+            //console.log("User > "+JSON.stringify(user));
             console.log(user.email);
             document.getElementById("emailP").innerHTML = user.email;
             
@@ -31,7 +29,8 @@ function guardarTarjeta(){
   let numeroTarjeta = document.getElementById("numeroTarjeta").value;
 
   db.collection("users").add({
-    bip: numeroTarjeta
+    bip: numeroTarjeta,
+    
   })
   .then(function(docRef) {
    // console.log("Document written with ID: ", docRef.id);
@@ -54,7 +53,11 @@ db.collection("users").onSnapshot((querySnapshot) => { //se reemplaza get x onSn
   querySnapshot.forEach((doc) => {
       console.log(`${doc.id} => ${doc.data().bip}`);
       storage.innerHTML += `
-          <p>${doc.data().bip} <button class="btn btn-danger" onclick="eliminar('${doc.id}')">Eliminar</button></p>
+          <p>${doc.data().bip} 
+            <button type="button" class="close" onclick="eliminar('${doc.id}')" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </p>
       `
   });
 });

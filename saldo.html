@@ -28,31 +28,21 @@
         </div>
     </div>
     </div>
-
+<!-- Navbar -->
     <div class="pos-f-t">
-      
-    <!-- Creando Navbar Side Menú, se borra div class="collapse" -->
         <nav class="navbar-sm navbar-dark bg-dark" id="barra">
             <h6>TRANS-LAB</h6>
-        <!--Borrar data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"-->
             <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
             aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <button class="btn btn-primary navbar-btn" id="logout" onclick="logoutWithFirebase()" >Cerrar <br /> Sesión</button>
         </nav>
-        <!-- Vertical Navs dentro de un div-->
-        <!-- no colocamos ni container ni section por que queremos que el navbar cubra toda la pantalla, sino tendria un margen -->
-        <!--Borrar   <li class="nav-item"> -->
         <nav id="sideMenu" class="nav flex-column float-left menu bg-dark menu_closed">
-        <!-- d-none aparece en display property en bootstrap, sirve para que inicialmente el sideMenu este oculto -->
-        <!-- se agrega bg-dark para dar color negro al menu-->
-        <!-- Con float-left hacemos que flote hacia la izquierda -->
         <div onclick="toggleMenu()" class="close_button">
             <span aria-hidden="true">&times;</span>
         </div>
         <div class="menu_content">
-        <!--menu_content para separar el menu del botón x-->
             <a class="nav-link active" href="saldo.html">ver saldo</a>
             <a class="nav-link" href="tarifa.html">calcular tarifa</a>
             <a class="nav-link" href="perfil.html">perfil</a>
@@ -61,6 +51,7 @@
          </div>
         </nav>
     </div>
+    
 <h3>Saldo</h3>
 
 <div class='container-1'>
@@ -75,6 +66,18 @@
     </div>
 </div>
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyAO7dpe75DRfVtfN-0CXYJdD6E5hItw2L0",
+          authDomain: "trans-lab-96591.firebaseapp.com",
+          databaseURL: "https://trans-lab-96591.firebaseio.com",
+          projectId: "trans-lab-96591",
+          storageBucket: "trans-lab-96591.appspot.com",
+          messagingSenderId: "456985569107"
+        };
+        firebase.initializeApp(config);
+      </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -85,7 +88,6 @@
     <script src="src/js/saldo.js"></script>
     <script src="src/js/menu.js"></script>
     <script src="src/js/logout.js"></script>
-    <script src="src/js/initializeFirebase.js"></script>
     
 </body>
 </html>
