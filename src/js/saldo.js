@@ -21,6 +21,8 @@ fetchBip1();
  })
  // fetch con select
  //let selectBip = document.getElementById('selectBip');
+
+ 
  let storeBipBalance2;
  boton.addEventListener("click", event=>{
   let selectBip = document.getElementById('selectBip').value;
@@ -54,8 +56,6 @@ var db = firebase.firestore();
 function guardarTarjeta(){
 
  let numBip = document.getElementById("numBip").value;
-
- 
 
  db.collection("users").add({
    bip: numBip
