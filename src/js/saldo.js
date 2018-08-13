@@ -1,5 +1,5 @@
 // funcion de asincrona fetch para  consultar a la api
-const renderBipBalance = document.getElementById("renderBipBalance"); //parrafo
+const renderBipBalance = document.getElementById("renderBipBalance");
 let storeBipBalance;
 const boton= document.getElementById("boton");
 
@@ -20,9 +20,6 @@ fetchBip1();
 
  })
  // fetch con select
- //let selectBip = document.getElementById('selectBip');
-
- 
  let storeBipBalance2;
  boton.addEventListener("click", event=>{
   let selectBip = document.getElementById('selectBip').value;
@@ -41,7 +38,6 @@ fetchBip1();
   
    })
 
- //
  const firestore = firebase.firestore();
  const settings = {/* your settings... */ 
    timestampsInSnapshots: true};
@@ -72,7 +68,7 @@ function guardarTarjeta(){
 }
 
 //leer info tarjetas
- selectBip = document.getElementById("selectBip"); // selectBip es el select
+ selectBip = document.getElementById("selectBip"); 
 db.collection("users").onSnapshot((querySnapshot) => { //se reemplaza get x onSnapshot para obtener actualizaciones en tiempo real. Tambien se saca .then
  selectBip.innerHTML="";
  querySnapshot.forEach((doc) => {
@@ -80,9 +76,7 @@ db.collection("users").onSnapshot((querySnapshot) => { //se reemplaza get x onSn
      selectBip.innerHTML += `
      <select>
          <option>${doc.data().bip}</option>
-        
      </select>
      `
-     
  });
 });
