@@ -7,7 +7,7 @@ boton.addEventListener("click", event=>{
 let numBip = document.getElementById('numBip').value;
 
 async function fetchBip1(){
-  const bip = await fetch(`http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${numBip}`)
+  const bip = await fetch(`https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${numBip}`)
   const dataBip = await bip.json();
   console.log(dataBip);
   let arrBip = Object.entries(dataBip)
@@ -25,7 +25,7 @@ fetchBip1();
   let selectBip = document.getElementById('selectBip').value;
   
   async function fetchBip2(){
-    const bip = await fetch(`http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${selectBip}`)
+    const bip = await fetch(`https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${selectBip}`)
     const dataBip = await bip.json()
     console.log(dataBip);
     let arrBip = Object.entries(dataBip)
