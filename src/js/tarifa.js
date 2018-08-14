@@ -12,7 +12,7 @@ let ticket = document.getElementById("selectTime").value;
   let selectBip = document.getElementById('selectBip').value;
   
   async function fetchBip2(){
-    const bip = await fetch(`http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${selectBip}`)
+    const bip = await fetch(`https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=${selectBip}`)
     const dataBip = await bip.json()
     console.log(dataBip);
     let arrBip = Object.entries(dataBip)

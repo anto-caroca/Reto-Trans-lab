@@ -1,3 +1,4 @@
+
 // funcion de asincrona fetch para  consultar a la api
 const renderBipBalance = document.getElementById("renderBipBalance");
 let storeBipBalance;
