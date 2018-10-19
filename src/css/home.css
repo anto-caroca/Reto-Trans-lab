@@ -42,6 +42,11 @@ h3{
     justify-content: space-between;
 }
 
+.container-fluid{
+    margin: 0;
+    padding: 0;
+}
+
 #logout{
 height: 50px;
 width: 50px;
@@ -55,15 +60,16 @@ font-size: 10px;
     height: 50px;
     margin-top:5px;
     margin-left: 5px;
+    position: absolute;
 }
 
-@media(min-width: 576px){
+@media(min-width: 1600px){
     .menu{
-        width: 10vw; 
+        width: 30vw; 
     }
 
     .menu_closed{
-        left:-10vw;
+        left:-30vw;
     }
 }
 
@@ -71,8 +77,7 @@ font-size: 10px;
     display: flex;
     flex-direction: column;
     margin-top: 40px;
-    margin-left: 25px;
-    margin-right: 25px;
+    align-items: center;
     font-weight: bold;
     color: white;
   }
@@ -84,6 +89,7 @@ font-size: 10px;
     line-height: 50px;
     font-size: 15px;
   }
+
 .flex-container a{
     width: 95%;
 }
@@ -97,8 +103,9 @@ font-size: 10px;
 h6  {
     font-weight: bold;
     color: white;
-    position: absolute;
-    margin-left: 40%;
+    
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 20px;
 }
 
@@ -115,6 +122,14 @@ h6  {
     .accordion {
         width: 50%;
     }
+
+    .menu{
+        width: 30vw; 
+    }
+
+    .menu_closed{
+        left:-30vw;
+    }
 }
 
 .faq {
@@ -126,11 +141,53 @@ h3 {
 }
 
 @media  (min-width: 1600px){
-.faq {
-    margin-top: 5%;
+    .faq {
+        margin-top: 5%;
+    }
+
+    h3 {
+        margin-top: 3%;
+    }
+
 }
 
-h3 {
-    margin-top: 3%;
+.flex-container, .box1, .box2, #ticketPrice, #finalBalance, #renderBipBalance {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.box2, #ticketPrice, #finalBalance, #renderBipBalance{
+    margin-top: 50px;
+    text-align: center;
+    font-weight: bold;
+    background-color: wheat;
 }
+
+@media  (max-width: 480px) {
+    .flex-container {
+    width: 80%;
+    }
+
+    .box1 {
+        width: 80%;
+    }
+
+    .box1 #boton {
+        width: 50%;
+        margin-top: 5%;
+    }
+
+    .box2, #ticketPrice, #finalBalance, #renderBipBalance{
+        margin-top: 20px;
+    }
+}
+
+#boton {
+    margin-top: 2%;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+

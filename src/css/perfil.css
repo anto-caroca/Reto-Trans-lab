@@ -3,6 +3,12 @@
     flex-direction: column;
 }
 
+.divImg {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .box2 {
     text-align: center; 
 }
@@ -19,6 +25,11 @@
     width: 100%;
     font-weight: bold;
 }
+
+#emailP {
+    background-color: #bfbfbf;
+}
+
 
 .box1 > div{
     background-color: orange;
@@ -74,6 +85,23 @@ margin-top: 20px;
     align-items:center;
     text-align: center;  
     justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 }
 
+#otrasTarjetas p {
+    margin: 8px;
+    border-bottom: #333 dashed 1px;
+}
+
+#numeroTarjeta, #btn-agregar {
+    width: 40%;
+}
+
+@media  (max-width: 480px){
+    #numeroTarjeta, #btn-agregar, .box4 {
+    width: 80%;
+    }
+}
 
