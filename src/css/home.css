@@ -1,25 +1,27 @@
 body{
-    background-color: lightgray;
+    background-color: #bfbfbf;
 }
 h3{
     text-align: center;
     margin-top: 10px;
 }
-/*Hacemos que el menu adopte la posición más arriba posible*/
+
 .menu{
     position: absolute;
     top:0;
-    height: 100vh; /* viewport height, usa el 100% de la altura de la pantalla*/
-    width: 90vw;  /* viewport width 90% del an*/
+    height: 100vh; 
+    width: 90vw;  
     transition: 0.5s ease-out;  
 }
 
 .menu_closed{
     left: -90vw;
+    z-index: 1;
 }
 
 .menu_open{
     left: 0;
+    z-index: 1;
 }
 
 .close_button{ 
@@ -55,9 +57,9 @@ font-size: 10px;
     margin-left: 5px;
 }
 
-@media(min-width: 576px){ /* esta medida se encuentra en bootstrap-> overview-> responsive breakpoints */
+@media(min-width: 576px){
     .menu{
-        width: 10vw; /*El menú va a tomar este ancho con pantallas de 768px hacia arriba*/
+        width: 10vw; 
     }
 
     .menu_closed{
@@ -100,4 +102,35 @@ h6  {
     margin-top: 20px;
 }
 
+ .accordion {
+    z-index: -1;
+    width: 90%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 
+@media  (min-width: 1199px) {
+    .accordion {
+        width: 50%;
+    }
+}
+
+.faq {
+    margin-top: 10%;
+}
+
+h3 {
+    margin-top: 8%;
+}
+
+@media  (min-width: 1600px){
+.faq {
+    margin-top: 5%;
+}
+
+h3 {
+    margin-top: 3%;
+}
+}

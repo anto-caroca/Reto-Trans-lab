@@ -1,5 +1,3 @@
-
-
 const renderBipBalance = document.getElementById("renderBipBalance"); 
 let storeBipBalance;
 const boton= document.getElementById("boton");
@@ -35,7 +33,6 @@ let ticket = document.getElementById("selectTime").value;
     console.log(bipSinPunto - ticket); // muestra el calculo de tarifa en la consola
     let saldoFinal = bipSinPunto - ticket;
 
-
     document.getElementById("finalBalance").innerHTML = "saldo final: $" + (saldoFinal);
     renderBipBalance.innerHTML = "su saldo es: "+storeBipBalance2;
     }           
@@ -45,7 +42,7 @@ let ticket = document.getElementById("selectTime").value;
    })
 // si fala este código aparece un mensaje en la consola que la app se puede romper
  const firestore = firebase.firestore();
- const settings = {/* your settings... */ 
+ const settings = {// your settings... 
    timestampsInSnapshots: true};
  firestore.settings(settings);
 
@@ -57,7 +54,7 @@ var db = firebase.firestore();
 
 //leer info tarjetas
  selectBip = document.getElementById("selectBip"); 
-db.collection("users").onSnapshot((querySnapshot) => { //se reemplaza get x onSnapshot para obtener actualizaciones en tiempo real. Tambien se saca .then
+db.collection("users").onSnapshot((querySnapshot) => { 
  selectBip.innerHTML="";
  querySnapshot.forEach((doc) => {
      console.log(`${doc.id} => ${doc.data().bip}`);

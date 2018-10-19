@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,7 @@
     crossorigin="anonymous">
     <link rel="stylesheet" href="src/css/home.css">
 </head>
-<body>
-    
+<body>    
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog modal-sm">
@@ -28,27 +27,15 @@
             </div>
         </div>
     </div>
-    </div>
-
     <div class="pos-f-t">
-      
-    <!-- Creando Navbar Side Menú, se borra div class="collapse" -->
         <nav class="navbar-sm navbar-dark bg-dark" id="barra">
          <h6>TRANS-LAB</h6>
-        <!--Borrar data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"-->
-            <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-            aria-label="Toggle navigation">
+            <button onclick="toggleMenu()" class="navbar-toggler" type="button"  aria-expanded="false"  aria-label="menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <button class="btn btn-primary navbar-btn" id="logout" onclick="logoutWithFirebase()" >Cerrar <br /> Sesión</button>
         </nav>
-        <!-- Vertical Navs dentro de un div-->
-        <!-- no colocamos ni container ni section por que queremos que el navbar cubra toda la pantalla, sino tendria un margen -->
-        <!--Borrar   <li class="nav-item"> -->
         <nav id="sideMenu" class="nav flex-column float-left menu bg-dark menu_closed">
-        <!-- d-none aparece en display property en bootstrap, sirve para que inicialmente el sideMenu este oculto -->
-        <!-- se agrega bg-dark para dar color negro al menu-->
-        <!-- Con float-left hacemos que flote hacia la izquierda -->
         <div onclick="toggleMenu()" class="close_button">
             <span aria-hidden="true">&times;</span>
         </div>
@@ -66,15 +53,14 @@
 
         <div class='container-1'>
             <div class="box1">
-                   <!-- <input id="numBip" class="form-control" type="number" placeholder="Ingresa n° tarjeta Bip!:"> -->
                     <label for="selectBip">Selecciona tu Bip!</label>
                     <select id="selectBip" class="form-control"></select>
                     <label for="selectTime">Selecciona horario de viaje</label>
                     <select id="selectTime" class="form-control" onchange="ticketSelection()">
                         <option value="" selected>selecciona horario</option>
-                        <option value="630">Bajo</option>
-                        <option value="680">Medio</option>
-                        <option value="760">Alto</option>
+                        <option value="650">Bajo</option>
+                        <option value="700">Medio</option>
+                        <option value="780">Alto</option>
                     </select>
                     <button id="boton" class="btn btn-warning">Calcular Tarifa</button>
             </div>

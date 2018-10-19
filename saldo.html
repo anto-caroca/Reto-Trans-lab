@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,13 +27,12 @@
             </div>
         </div>
     </div>
-    </div>
+    
 <!-- Navbar -->
     <div class="pos-f-t">
         <nav class="navbar-sm navbar-dark bg-dark" id="barra">
             <h6>TRANS-LAB</h6>
-            <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-            aria-label="Toggle navigation">
+            <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-expanded="false"  aria-label="menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <button class="btn btn-primary navbar-btn" id="logout" onclick="logoutWithFirebase()" >Cerrar <br /> Sesión</button>
@@ -56,7 +55,7 @@
 
 <div class='container-1'>
     <div class="box1">
-            <input id="numBip" class="form-control" type="number" placeholder="Ingresa n° tarjeta Bip!:">
+            <input id="numBip" class="form-control" type="number"  aria-label="numero" placeholder="Ingresa n° tarjeta Bip!:">
             <label for="selectBip">Selecciona tu Bip!</label>
             <select id="selectBip" class="form-control"></select>
             <button id="boton" class="btn btn-warning" onclick="guardarTarjeta()">Ver Saldo</button>

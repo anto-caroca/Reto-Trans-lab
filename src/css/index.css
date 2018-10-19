@@ -1,5 +1,5 @@
 body{
-    background-color:gray;
+    background-color:  #bfbfbf;
 }
 
 h1{
@@ -47,12 +47,12 @@ button{
 }
 
 .box3{
-    color: white;
+    color: black;
     margin-top: 15px;
 }
     
 a{
-    color: orange;
+    color: #000099;
     text-decoration: none;
 }
 

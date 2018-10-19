@@ -14,7 +14,7 @@ window.onload = ()=>{
     });
   }
   const firestore = firebase.firestore();
-  const settings = {/* your settings... */ 
+  const settings = {// your settings...  
     timestampsInSnapshots: true};
   firestore.settings(settings);
 
@@ -29,8 +29,9 @@ function guardarTarjeta(){
   let numeroTarjeta = document.getElementById("numeroTarjeta").value;
 
   db.collection("users").add({
-    bip: numeroTarjeta,
-    
+    consulta: "número Bip!",
+    bip: numeroTarjeta
+
   })
   .then(function(docRef) {
    // console.log("Document written with ID: ", docRef.id);
@@ -47,8 +48,8 @@ function guardarTarjeta(){
 }
 
 //leer info tarjetas
-let storage = document.getElementById("otrasTarjetas"); //DIV box4 div p es el parrafo
-db.collection("users").onSnapshot((querySnapshot) => { //se reemplaza get x onSnapshot para obtener actualizaciones en tiempo real. Tambien se saca .then
+let storage = document.getElementById("otrasTarjetas"); 
+db.collection("users").onSnapshot((querySnapshot) => { 
   storage.innerHTML="";
   querySnapshot.forEach((doc) => {
       console.log(`${doc.id} => ${doc.data().bip}`);

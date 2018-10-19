@@ -1,4 +1,3 @@
-
 // funcion de asincrona fetch para  consultar a la api
 const renderBipBalance = document.getElementById("renderBipBalance");
 let storeBipBalance;
@@ -12,7 +11,7 @@ async function fetchBip1(){
   const dataBip = await bip.json();
   console.log(dataBip);
   let arrBip = Object.entries(dataBip)
-  console.log(arrBip[2][1])
+  // console.log(arrBip[2][1]) 
   storeBipBalance = arrBip[2][1];
   renderBipBalance.innerHTML = "su saldo es: "+storeBipBalance;
 
@@ -30,7 +29,7 @@ fetchBip1();
     const dataBip = await bip.json()
     console.log(dataBip);
     let arrBip = Object.entries(dataBip)
-    console.log(arrBip[2][1])
+    console.log(arrBip[2][1]) //sacar coma
     storeBipBalance2 = arrBip[2][1];
     renderBipBalance.innerHTML = "su saldo es: "+storeBipBalance2;
   
@@ -40,7 +39,7 @@ fetchBip1();
    })
 
  const firestore = firebase.firestore();
- const settings = {/* your settings... */ 
+ const settings = {// your settings... 
    timestampsInSnapshots: true};
  firestore.settings(settings);
 
@@ -54,7 +53,9 @@ function guardarTarjeta(){
 
  let numBip = document.getElementById("numBip").value;
 
+
  db.collection("users").add({
+   consulta: "número Bip!",
    bip: numBip
  })
  .then(function(docRef) {
@@ -70,7 +71,7 @@ function guardarTarjeta(){
 
 //leer info tarjetas
  selectBip = document.getElementById("selectBip"); 
-db.collection("users").onSnapshot((querySnapshot) => { //se reemplaza get x onSnapshot para obtener actualizaciones en tiempo real. Tambien se saca .then
+db.collection("users").onSnapshot((querySnapshot) => {  
  selectBip.innerHTML="";
  querySnapshot.forEach((doc) => {
      console.log(`${doc.id} => ${doc.data().bip}`);
